@@ -19,6 +19,7 @@ uartConfig_t config = TENMA_PSU;
 #define MAX_CLIENTS 1
 #define SERVER_PORT 23  // VISA uses port 23
 #define PHY_CS_PIN 17
+#define PHY_RESET_PIN 20
 
 // Spare pins that also get level converted either used
 // for RTS/CTS if 4 wire, otherwise, unused but set
@@ -32,6 +33,10 @@ EthernetClient clients[MAX_CLIENTS];
 
 void setup() {
   delay(1000);
+  pinMode(PHY_RESET_PIN, OUTPUT);
+  digitalWrite(PHY_RESET_PIN, LOW);
+  delay(200);
+  digitalWrite(PHY_RESET_PIN, HIGH);
   Ethernet.init(PHY_CS_PIN);
   Serial.begin(9600);
   pinMode(LED_BUILTIN, OUTPUT);

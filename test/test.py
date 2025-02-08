@@ -2,7 +2,7 @@ import time
 
 import pyvisa
 
-IP_ADDRESS = "10.59.73.147"
+IP_ADDRESS = "10.59.73.20"
 
 
 rm = pyvisa.ResourceManager("@py")
