@@ -5,7 +5,9 @@
 
 // IP Configuration
 const bool USE_DHCP = 1;
-uint8_t mac_address[] = {0x90, 0xA2, 0xDA, 0x0D, 0xA3, 0x12};
+
+// Don't forget to update for each board!!
+uint8_t mac_address[] = {0x90, 0xA2, 0xDA, 0x0D, 0xA3, 0x13};
 // These will only be used if USE_DHCP is not True
 // so we connect with a static IP
 IPAddress ip_address(10,59,73,99);
@@ -13,7 +15,7 @@ uint8_t subnet_mask[] = {255,255,255,0};
 
 
 // UART Configuration (imported from uart_config.h)
-uartConfig_t config = TENMA_PSU;
+uartConfig_t config = AGILENT_E4433B;
 
 // Definitions the user is unlikely to need to chang4e
 #define MAX_CLIENTS 1
